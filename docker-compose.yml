@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  xmrig:
+    image: xmrig-custom
+    container_name: xmrig_miner
+    restart: unless-stopped
+    volumes:
+      - ./xmrig_config/config.json:/xmrig/config.json
+    command: -c /xmrig/config.json
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'
+          memory: 6G
