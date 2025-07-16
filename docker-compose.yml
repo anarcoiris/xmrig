@@ -4,7 +4,7 @@ services:
   xmrig:
     image: xmrig-custom
     container_name: xmrig_miner
-    restart: unless-stopped
+    restart: always
     volumes:
       - ./xmrig_config/config.json:/xmrig/config.json
     command: -c /xmrig/config.json
